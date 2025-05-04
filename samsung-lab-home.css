@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.site-header {
+    background: #174884;
+    color: white;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-header .logo {
+    font-size: 1.5rem;
+}
+
+.home-icon {
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.apps-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apps-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.grid-icon {
+    display: grid;
+    grid-template-columns: repeat(3, 4px);
+    grid-template-rows: repeat(3, 4px);
+    gap: 3px;
+}
+
+.grid-icon span {
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    display: block;
+    border-radius: 50%;
+}
+
+.apps-menu-container {
+    position: relative;
+}
+
+.apps-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 260px;
+    z-index: 1000;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+#apps-toggle:checked+label+.apps-dropdown {
+    display: grid;
+}
+
+.app-item {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: background-color 0.2s ease;
+    border: 1px solid white;
+}
+
+.app-item:hover {
+    background-color: #f1f3f4;
+}
+
+.app-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.app-item span {
+    font-size: 0.85rem;
+    color: black;
+}
+
+.sign-in-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sign-in-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sub-header {
+    background: #0d2a4d;
+    color: white;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sub-header .logo {
+    max-height: 70px;
+}
+
+.sub-nav-buttons {
+    margin-left: 100%;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sub-nav-btn {
+    background-color: transparent;
+    border: 1px solid #0d2a4d;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: large;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sub-nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-section {
+    background: white;
+    text-align: center;
+}
+
+.card h2 {
+    color: white;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    background: #174884;
+    color: white;
+    margin-top: auto;
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav {
+        justify-content: flex-end;
+    }
+
+    .home-section {
+        padding: 10px 10px;
+    }
+
+    .home-content h2 {
+        font-size: 3rem;
+    }
+
+    .home-content p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .site-header .logo {
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+    .nav a {
+        margin-left: 0;
+        padding: 0.5rem;
+    }
+
+    .home-section {
+        padding: 10px 10px;
+    }
+
+    .home-content h2 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 1rem 1rem;
+    }
+
+    .home-section {
+        padding: 3rem 1rem;
+    }
+
+    .home-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 0.9rem;
+    }
+}
